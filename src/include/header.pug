@@ -1,0 +1,72 @@
+-let keywordCount = 0;
+mixin searchList(keyword)
+  - keywordCount++
+  li: a(href=`http://www.careasy.co.kr/search?search_text=${keyword}`) #{keywordCount}. #{keyword}
+
+
+div(class="outer-top-banner")
+  .top-banner-area   
+    button(class="img-box fn-open-modal-pop-sunting")
+      img(src=`${imgPath}/modal/pop/pop_sunting_topbanner.png`, alt="탑배너바" )
+    button.btn-close-banner
+      img(src=`${imgPath}/modal/pop/btn_close_top_banner.png`, alt="닫기버튼")
+
+
+
+header.header 
+  //- div.header-bg
+
+  div.header-top
+    //==검색 추가부분==
+    div.top-content
+      div.top-logo
+        a(href=`${basePath}index.html`)
+          h1.logo-txt 
+            p.logo-txt-main SAMSUNG CARD
+            p.logo-txt-sub 삼성카드 장기렌트. 리스
+          //- img(src=`${imgPath}/common/logo_top.png`, alt="탑로고")
+          
+        
+      div.search-area
+        div.search-bar
+          div.search-cont
+            div(class="bar-rank fn-open-rankbox")
+              p.p-txt 인기검색
+              p.rank-one 1. 스포티지
+            input(class="in-search" type="text" placeholder="차종을 입력하세요")
+          a(class="btn-search" href=`${basePath}search/search.html`) 
+            img(src=`${imgPath}/common/icon_search.png`, alt="검색버튼")
+          
+        div(class="search-rank open-rank-target")
+          div.rank-box
+            div.icon-triangle
+            button(class="btn-close-rank" type="button")
+            p.top-ment 인기검색
+            ul.rank-ul
+              +searchList("스포티지")
+              +searchList("카니발")
+              +searchList("테슬라")
+              +searchList("gv80")
+              +searchList("그랜저")
+    //==검색 추가부분 끝==
+
+  
+  div.header-container
+    //- img(src=`${imgPath}/common/logo_top_color.png`, alt="탑로고 모바일" class="pc-hidden")
+    
+    //- div.header-logo
+    //-   a(href=`${basePath}index.html`)
+    //-    img(src=`${imgPath}/common/logo_top.png`, alt="탑로고" class="mobile-hidden")
+    //-    img(src=`${imgPath}/common/logo_top_color.png`, alt="탑로고 모바일" class="pc-hidden")
+
+    nav.top-menu-content
+      ul.top-menu-ul
+        li: a(href=`${basePath}intro/intro.html`) 삼성카드 장기렌트. 리스
+        li: a(href=`${basePath}index.html` data-scroll-target="release") 즉시출고차량
+        li: a(href=`${basePath}index.html` data-scroll-target="special") 이달의 특가차량
+        li: a(href=`${basePath}index.html` data-scroll-target="youtube") 유튜브 리뷰
+        //- li: a(href=`https://www.youtube.com/channel/UC_LntEPC8s3h_QVESEuc1jQ` target="_blank") 유튜브 리뷰
+
+    div.btn-box-branch
+      button(type="button" class="btn-branch fn-open-modal-branch") 
+        img(src=`${imgPath}/common/btn_branch.png`, alt="지사모집")

@@ -1,0 +1,19 @@
+//$mobileBaseMaxSize: 750px;
+$mobileBaseMaxSize: 900px;
+$colorMainBlue: #333b97;
+$colorMainBlack: #191919;
+
+$baseSectWithSize: 1016px;
+$baseSectWithSizeSub: 1140px;
+
+
+@function removeUnit($value) {
+  //@return (calc($value / calc($value * 0 + 1)));
+  @return $value * 0 + 1;
+}
+
+@function toRem($pxValue){
+  $toNum: $pxValue * 0 + 1;
+  $numValue: calc($pxValue / $toNum );
+  @return (calc($numValue / 10))*1rem;
+}

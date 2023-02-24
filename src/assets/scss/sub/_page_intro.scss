@@ -1,0 +1,55 @@
+@mixin bgImg($url){
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.page-sub-intro{
+  // .sect-container{
+  //   width: 100%
+  // }
+  .sect{
+    padding: 0;
+    .sect-container{
+      width: auto;
+    }
+  }
+
+  .intro-sect-cont01{
+    padding-top: 20px;
+  }
+  .intro-sect-partner{
+    padding-bottom: 100px;
+  }
+}
+
+.intro-sect-cont01{
+  .sect-content{ 
+  }
+}
+.intro-sect-partner{
+  
+  .sect-content{
+    
+  }
+}
+
+@media (max-width:$mobileBaseMaxSize){
+  .page-sub-intro{
+    .sect:not(.intro-sect-cont03){
+      background: none;
+      padding: 0;
+      height: auto;
+    }
+    .sect-content{
+      img{
+        width: 100%;
+      }
+    }
+
+  }
+}
+
+
+
+

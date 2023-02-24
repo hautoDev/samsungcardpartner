@@ -1,0 +1,40 @@
+{
+  "name": "careasy",
+  "version": "1.0.0",
+  "description": "careasy",
+  "repository": "https://github.com/RedKyrus/careasy.git",
+  "author": "RedKyrus <ahehfldi2022@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "gulp dev",
+    "build": "gulp build",
+    "deploy": "gulp deploy"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.7",
+    "@babel/register": "^7.16.7",
+    "babelify": "^10.0.0",
+    "browser-sync": "^2.27.7",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-bro": "^2.0.0",
+    "gulp-csso": "^4.0.1",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-if": "^3.0.0",
+    "gulp-image": "6.2.1",
+    "gulp-pug": "^5.0.0",
+    "gulp-remove-sourcemaps": "^1.0.4",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-webserver": "^0.9.1",
+    "pug": "^3.0.2",
+    "sass": "^1.47.0",
+    "uglifyify": "^5.0.2"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ],
+  "dependencies": {}
+}

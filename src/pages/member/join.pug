@@ -1,0 +1,49 @@
+extends ../../template/layout_sub
+
+block content
+  main(class="wrap-container page-member page-member-join")
+    section(class="sect join-sect-cont")
+      p.join-title 회원가입
+      form(class="join-area") 
+        table(class="join-area-table")
+          tr
+            td: p 아이디
+            td
+              input(type="text")
+          tr
+            td: p 비밀번호
+            td: input(type="password")
+          tr
+            td: p 비밀번호 확인
+            td: input(type="password")
+          tr
+            td: p 이름
+            td: input(type="text")
+          tr
+            td: p 휴대전화
+            td
+              input(type="text")
+              span ('-' 없이 입력)
+          tr
+            td: p 이메일
+            td: input(type="text")
+
+        ul.agree-check-area
+          li
+            p.agree-title [필수] 이용약관 동의
+            div.agree-text-cont
+              include ./_agree_text01
+
+            div(class="check-agree-box")
+              input(type="checkbox", id="check-agree01" )
+              label(for="check-agree01") 이용약관에 동의
+          li
+            p.agree-title [필수] 개인정보 수집 및 이용동의
+            div.agree-text-cont
+              include ./_agree_text02
+
+            div(class="check-agree-box")
+              input(type="checkbox", id="check-agree02" )
+              label(for="check-agree02") 이용약관에 동의
+          
+        button(type="button" class="btn-join") 가입하기 

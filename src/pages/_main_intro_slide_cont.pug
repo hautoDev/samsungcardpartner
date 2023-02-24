@@ -1,0 +1,65 @@
+mixin introSlideCont(contName)
+  li(class=`swiper-slide ${contName}`)
+    .bg-area 
+      img(src=`${imgPath}/main/slide_intro_bg02.png`, alt="인트로 이미지")
+    .cont-area 
+      p.title-sub 삼성카드 장기렌트. 리스
+      div.title-main
+        p.title01 여름 특별할인 차종!
+        p.title02 단독물량 확보! 먼저잡는자가 임자!
+      
+      p.date 2022.07.01 ~ 08.30
+
+      a.btn-read-more 자세히 보기
+
+      p.add-tip ※ 소량입고로 실시간 재고상황이 다를 수 있습니다.
+
+mixin introSlideCont01
+  li(class=`swiper-slide cont01`)
+    .bg-area 
+      img(src=`${imgPath}/main/slide_intro_bg01.png`, alt="인트로 이미지")
+    .cont-area 
+      p.title-sub 삼성카드 장기렌트. 리스
+      div.title-main
+        p.title01 업계 최저견적! 빠른심사!
+        p.title02 월 98,000원 부터
+      
+      p.date 2022.07.01 ~ 08.30
+
+      a(href="#none" class="btn-read-more") 자세히 보기
+
+      //- p.add-tip ※ 소량입고로 실시간 재고상황이 다를 수 있습니다.
+
+mixin introSlideCont02
+  li(class=`swiper-slide cont02`)
+    .bg-area 
+      img(src=`${imgPath}/main/slide_intro_bg02.png`, alt="인트로 이미지")
+    .cont-area 
+      p.title-sub 삼성카드 삼성카드 장기렌트. 리스
+      div.title-main
+        p.title01 여름 특별할인 차종!
+        p.title02 단독물량 확보! 먼저잡는자가 임자!
+      
+      p.date 2022.07.01 ~ 08.30
+
+      a(href="#none" class="btn-read-more")  자세히 보기
+
+      p.add-tip ※ 소량입고로 실시간 재고상황이 다를 수 있습니다.
+
+
+
+//인트로 슬라이드 부분
+div(class="intro-slide-cont")
+  div(class="swiper intro-slide-area")
+    ul(class="swiper-wrapper intro-slide-ul")
+      +introSlideCont01
+      +introSlideCont02
+    .intro-slide-navigation
+      div(class="slide-btn slide-btn-prev")
+        img(src="img/main/btn_arrow_left.png", alt="슬라이드 이전")
+      div(class="slide-btn slide-btn-next")
+        img(src="img/main/btn_arrow_left.png", alt="슬라이드 다음")
+
+    .intro-slide-pagination
+      .slide-pagination-area
+      

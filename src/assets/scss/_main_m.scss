@@ -1,0 +1,350 @@
+/*반응형*/
+@media (max-width:$mobileBaseMaxSize) {
+  .page-main{
+    .title-area{
+      .title-main{
+        font-size: toRem(52);
+        span{
+          display: block;
+          margin-top: toRem(6);
+        }
+      }
+      .title-sub{
+        font-size: toRem(30);
+        
+      }
+    }
+  
+    .title-partner{
+   
+      .title-logo{
+        
+      }
+    }
+  }
+  
+  .sect{
+    padding: 0 toRem(40);
+    padding-top: toRem(46);
+    padding-bottom: toRem(66);
+    .sect-container{
+      width: 100%;
+    }
+    
+  }
+
+  .sect-common-ad{
+    padding: 0 toRem(40);
+    img{
+      width: 100%;
+    }
+  }
+
+  .sect-release, .sect-special{
+    padding-left: toRem(8);
+    padding-right: toRem(8);
+  }
+
+
+  .partner-list-cont{
+    margin-top: toRem(50);
+    img{
+      width: 100%;
+    }
+  }
+
+  
+
+  .sect-intro{
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  .sect-in-info{
+    padding-bottom: 0;
+  }
+  
+  .sect-youtube{
+    margin-top: toRem(60);
+  }
+
+  .sect-partner{
+    .partner-list02{
+      margin-top: toRem(60);
+    }
+  }
+
+  .title-youtube {
+    .title-main{
+     img{
+      width: toRem(280);
+      }
+    }
+  }
+
+  .youtube-intro{
+    justify-content: stretch;
+    align-items: center;
+    flex-direction: column;
+    margin-top: toRem(50);
+    padding-bottom: toRem(52);
+    .youtube-area-main{
+      width: 100%;
+      //padding-top: 56.25%;
+      .youtube-box{
+        padding-top: 56.25%;
+        width: 100%;
+        border-radius: toRem(30);
+        .youtube-frame{
+          
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      
+    }
+    .youtube-area-text{
+      margin-top: toRem(20);
+      width: 100%;
+      p{
+        text-align: left;
+      }
+      .txt-main{
+        font-size: toRem(45);
+      }
+      .txt-sub{
+        
+        margin-top: toRem(18);
+        p{
+          font-size: toRem(34);
+        }
+      }
+  
+    }
+  
+    .btn-go-youtube{
+      justify-content: center;
+      border-radius: toRem(32);
+      padding-top: toRem(24);
+      padding-bottom: toRem(22);
+      margin: 0 auto;
+      margin-top: toRem(42);
+      font-size: toRem(33);
+      width: 88%;
+      
+  
+      .icon-triangle{
+        position: relative;
+        padding-right: toRem(20);
+        &::after{
+          margin-left: toRem(20);
+          content: "";
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 0px;
+          height: 0px;
+          border-left: toRem(20) solid #c60000;
+          border-top: toRem(14) solid transparent;
+          border-bottom: toRem(14) solid transparent;
+        }
+      }
+    }
+  }
+
+  
+  .youtube-contents{
+    margin-top: toRem(50);
+    border-radius: toRem(20);
+    .youtube-area{
+      width: 100%;
+      
+      .youtube-box{
+        position: relative;
+        padding-top: 56.25%;
+        width: 100%;
+        //height: 56.25%;
+        border-radius: toRem(26);
+        .youtube-frame{
+    
+        }
+      }
+      
+    }
+    .youtube-text{
+      margin-top: toRem(30);
+      font-size: toRem(42);
+    }
+    
+  }
+  
+
+  .consult-area{
+    margin-top: toRem(40);
+    .consult-box{
+      border-radius: toRem(10);
+      height: toRem(100);
+    }
+    .consult-katalk{
+      
+      .icon{
+        
+        img{
+          
+        }
+      }
+      .ment{
+      }
+    }
+    .consult-tel{
+      width: 100%;
+      justify-content: center;
+      padding-left: 0;
+      .tel-title{
+        
+        display: flex;
+        align-items: center;
+        margin-right: toRem(14);
+        .icon{
+          margin-right: toRem(8);
+          img{
+            width: toRem(38);
+          }
+        }
+        .title{
+          font-size: toRem(25);
+        }
+        
+      }
+  
+      .tel-cont{
+        
+        font-size: toRem(26);
+        
+        span{
+        
+          font-size: toRem(22);
+          
+          margin-left: toRem(10);
+        }
+      }
+    }
+  }
+
+
+  
+
+  .page-main{
+    .title-partner{
+   
+      .title-logo{
+        margin-right: toRem(25);
+        width: toRem(180);
+      }
+    }
+  }
+  
+
+  .in-info-content{
+    margin-top: toRem(30);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding-bottom: toRem(50);
+    // border-bottom: 2px dashed #717171;
+    position: relative;
+    &::after{
+      
+    }
+    .in-info-area{
+      order: 1;
+      width: 90%;
+      margin: 0 auto;
+      grid-template-rows: repeat(1, 1ft);
+      grid-template-columns: repeat(1, 1fr);
+      gap: toRem(18);
+      &::before{
+        content: none;
+      }
+      input{
+        border-radius: toRem(10);
+
+        // padding-top: 20px;
+        // padding-bottom: 20px;
+        padding-left: toRem(24);
+        height: toRem(72);
+        font-size: toRem(26);
+        &::placeholder{
+          
+        }
+        
+      }
+    }
+    .btn-quote{
+      order: 3;
+      margin: 0 auto;
+      margin-top: toRem(30);
+      width: 90%;
+      background-color: #fff;
+      border-radius: 10px;
+      border: 2px solid $colorMainBlack;
+      display: flex;
+      justify-content: center;
+      padding: toRem(28) 0;
+      p{
+        color: #717171;
+        font-size: toRem(34);
+        line-height: 1.2;
+        &:last-of-type{
+          margin-left: toRem(8);
+          
+        }
+      }
+      &:hover{
+        border: none;
+        background-color: $colorMainBlue;
+        p{
+          color: #fff;
+        }
+      }
+    }
+    .agree-area{
+      order: 2;
+      width: 90%;
+      margin: 0 auto;
+      justify-content: left;
+      margin-top: toRem(30);
+      padding-left: toRem(12);
+      .check-agree{
+
+        &:checked+.check-agree-label::before{
+          font-size: toRem(34);
+        }
+      }
+      .check-agree-label{
+        //padding-top: toRem(2);
+        font-size: toRem(30);
+        line-height: 1.2;
+        &::before{
+          margin-right: toRem(8);
+          line-height: 1.3;
+          width: toRem(42);
+          height: toRem(42);
+        }
+      }
+
+      .btn-show{
+        margin-left: toRem(14);
+        width: toRem(88);
+        height: toRem(42);
+        font-size: toRem(28);
+        padding-top: toRem(8);
+        border-radius: toRem(10);
+      }
+    }
+  }
+  
+}

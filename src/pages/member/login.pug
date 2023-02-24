@@ -1,0 +1,15 @@
+extends ../../template/layout_sub
+
+block content
+  main(class="wrap-container page-member page-member-login")
+    section(class="sect login-sect-cont")
+      form(class="login-area")
+        div.in-box
+          label(for="in-id") ID
+          input(type="text" id="in-id")
+        div.in-box
+          label(for="in-password") PASSWORD
+          input(type="password" id="in-password")
+
+        button(type="button" class="btn-login") 로그인
+    

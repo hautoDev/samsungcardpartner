@@ -1,0 +1,493 @@
+/*인트로 슬라이드 부분*/
+.intro-slide-cont{
+  position: relative;
+  width: 100%;
+  .intro-slide-area{
+    position: relative;
+  }
+  .intro-slide-navigation{
+    pointer-events: none;
+    position: absolute;
+    width: $baseSectWithSizeSub;
+    // margin: 0 auto;
+    z-index: 5;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    // left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: translateX(-50%);
+    .slide-btn{
+      pointer-events: auto;
+      cursor: pointer;
+      filter: invert(100%);
+    }
+    .slide-btn-next{
+      transform: scale(-1);
+    }
+  }
+  .intro-slide-pagination{
+    position: absolute;
+    bottom: 24px;
+    // width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    // width: 100%;
+    .slide-pagination-area{
+      margin: 0 auto;
+    }
+  }
+
+  .swiper-pagination-bullet{
+    background-color: rgba($color: #fff, $alpha: 0.8);
+    width: 8px;
+    height: 8px;
+  }
+  .swiper-pagination-bullet-active{
+    background-color: #fff;
+    width: 40px;
+    border-radius: 4px;
+  }
+}
+
+.intro-slide-ul{
+    li{
+      width: 10px;
+      margin: 0 auto;
+      position: relative;
+      // align-items: center;  
+    }
+
+    .bg-area{
+      img{
+        max-width: fit-content;
+        width: 100%;
+      }
+    }
+    .cont-area{
+      width: $baseSectWithSize;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: left;
+      padding-top: 60px;
+      .title-sub{
+        font-size: 20px;
+      }
+      .title-main{
+        margin-top: 26px;
+        p{
+          font-size: 52px;
+          font-weight: 500;
+        }
+        .title02{
+          margin-top: 16px;
+        }
+      }
+      .date{
+        font-size: 20px;
+        margin-top: 24px;
+      }
+
+      .btn-read-more{
+        display: flex;
+        margin-top: 48px;
+        font-size: 17px;
+        border-radius: 10px;
+        height: 55px;
+        width: 188px;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid #333;
+      }
+
+      .add-tip{
+        margin-top: 30px;
+        font-size: 17px;
+      }
+
+    }
+}
+
+
+
+
+
+/*슬라이드 부분*/
+.slide-cont{
+  margin-top: 68px;
+  position: relative;
+  width: 100%;
+  //margin: 0 auto;
+  .slide-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .swiper{
+    order:2;
+    width: $baseSectWithSize;
+  }
+
+  .slide-btn{
+    cursor: pointer;
+  }
+  //https://codepen.io/sosuke/pen/Pjoqqp
+  .slide-btn-prev{
+    order: 1;
+    left: 0;
+    img{
+      //filter: invert(98%) sepia(14%) saturate(7372%) hue-rotate(171deg) brightness(87%) contrast(91%);
+      // filter: invert(81%) sepia(49%) saturate(5162%) hue-rotate(216deg) brightness(90%) contrast(82%);
+    }
+    
+  }
+  .slide-btn-next{
+    order: 3;
+    transform: scaleX(-1);
+  }
+
+  .slide-pagination{
+    margin-top: 44px;
+    .swiper-pagination-bullet{
+      background-color: #a5a5a5;
+      width: 15px;
+      height: 15px;
+    }
+    .swiper-pagination-bullet-active{
+      background-color: $colorMainBlack;
+    }
+  }
+}
+
+.car-info-area{
+  .info-box{
+    margin-top: 25px;
+    padding:0 24px;
+    cursor: pointer;
+    display: block;
+    background-color: #ececec;
+    border-radius: 10px;
+    padding-top: 32px;
+    padding-bottom: 26px;
+    border:2px solid #d7d7d7;
+    position: relative;
+
+    .car-top-icon{
+      position: absolute;
+      top: -22px;
+      left: 20px;
+
+    }
+
+    .car-name{
+      font-size: 30px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .img-area{
+      margin-top: 10px;
+      padding: 10px 0;
+      img{
+        width: 100%;
+      }
+    }
+
+    .bg-white-box{
+      background-color: #fff;
+      border-radius: 10px;
+      
+    }
+    
+    .car-info{
+      text-align: left;
+      .car-price-box{
+        margin-top: 6px;
+        background-color: #fff;
+        border-radius: 10px;
+        padding-top: 16px;
+        padding-bottom: 14px;
+        padding-left: 8px;
+        .p-deposit{
+          color: #4c4c4c;
+          font-size: 20px;
+          font-weight: 500;
+        }
+        .p-price{
+          color: $colorMainBlue;
+          font-size: 21px;
+          font-weight: 500;
+          margin-top: 10px;
+          .span-point{
+            font-family: "Montserrat",sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+          }
+        }
+        .p-tip{
+          margin-top: 4px;
+          color: #4c4c4c;
+          font-size: 15px;
+        }
+      }
+
+
+      .car-price-ul{
+        margin-top: 24px;
+        li{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 3px 0;
+          p{
+            
+          }
+          .p-type{
+            color: $colorMainBlack;
+            font-family: 'NanumSquare', sans-serf;
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: -1.7px;
+          }
+          .p-price{
+            color: $colorMainBlue;
+            font-family: "GmarketSans",sans-serif;
+            font-size: 33px;
+            font-weight: 700;
+            // letter-spacing: -1.6px;
+            .won{
+              font-family: 'NanumSquare', sans-serf;
+              font-weight: 500;
+              font-size: 22px;
+              margin-left: 2px;
+            }
+          }
+        }
+      }
+      
+
+      .car-tip{
+        margin-top: 6px;
+        font-size: 16px;
+        text-align: left;
+      }
+    }
+
+
+    .btn-quote{
+      background-color: $colorMainBlack;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 500;
+      width: 100%;
+      height: 55px;
+      border-radius: 10px;
+      margin-top: 12px;
+    }
+  }
+}
+
+
+.car-info-style-black{
+
+}
+
+.slide-part{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 50px;
+  column-gap: 26px;
+}
+
+
+
+
+  /*인트로 슬라이드 부분*/
+@media (max-width:$mobileBaseMaxSize){
+  .intro-slide-cont{
+    
+    .intro-slide-area{
+      position: relative;
+    }
+    .intro-slide-navigation{
+      display: none;
+      .slide-btn{
+      
+      }
+      .slide-btn-next{
+      
+      }
+    }
+    .intro-slide-pagination{
+      display: none;
+    }
+
+  }
+
+  .intro-slide-ul{
+      li{
+        width: toRem(10);
+        
+      }
+
+      .bg-area{
+        
+      }
+      .cont-area{
+        padding-left: toRem(30);
+        width: 100%;
+        padding-top: toRem(36);
+        .title-sub{
+          font-size: toRem(24);
+        }
+        .title-main{
+          margin-top: toRem(20);
+          p{
+            font-size: toRem(40);
+          }
+          .title02{
+            margin-top: toRem(6);
+          }
+        }
+        .date{
+          font-size: toRem(25);
+          margin-top: toRem(18);
+        }
+
+        .btn-read-more{
+          margin-top: toRem(26);
+          font-size: toRem(24);
+          border-radius: toRem(10);
+          height: toRem(58);
+          width: toRem(200);
+        }
+
+        .add-tip{
+          margin-top: toRem(30);
+          font-size: toRem(18);
+        }
+
+      }
+  }
+}
+
+
+
+@media (max-width:$mobileBaseMaxSize){
+  .slide-cont{
+    margin-top: toRem(56);
+
+    .swiper{
+      width: toRem(660);
+    }
+  
+    .slide-pagination{
+      margin-top: toRem(40);
+      .swiper-pagination-bullet{
+        width: toRem(20);
+        height: toRem(20);
+        margin: 0 8px !important;
+      }
+    }
+
+    .slide-btn{
+      display: none;
+    }
+  }
+  
+  .car-info-area{
+    .info-box{
+      border-radius: toRem(10);
+      padding: 0 toRem(20);
+      padding-top: toRem(42);
+      padding-bottom: toRem(20);
+
+      .car-top-icon{
+        position: absolute;
+        top: toRem(-38);
+        left: toRem(20);
+        img{
+          width: toRem(164);
+        }
+      }
+
+      .car-name{
+        font-size: toRem(30);
+      }
+  
+      .car-info{
+        .car-price-box{
+          margin-top: toRem(6);
+          border-radius: toRem(10);
+          padding-top: toRem(26);
+          padding-bottom: toRem(24);
+          padding-left: toRem(12);
+          .p-deposit{
+            font-size: toRem(30);
+          }
+          .p-price{
+            font-size: toRem(31);
+            margin-top: toRem(10);
+            .span-point{
+              font-size: toRem(52);
+            }
+          }
+          .p-tip{
+            margin-top: toRem(10);
+            font-size: toRem(20);
+          }
+        }
+
+
+
+        .car-price-ul{
+          margin-top: toRem(14);
+          li{
+            padding: toRem(5) 0;
+            &:not(:last-of-type){
+              // border-bottom: 1px solid #5d8ac3;
+            }
+            .p-type{
+              font-size: toRem(20);
+            }
+            .p-price{
+              
+              font-size: toRem(26);
+
+              .won{
+                font-size: toRem(20);
+                margin-left: toRem(3);
+              }
+            }
+            
+          }
+        }
+
+
+        .car-tip{
+          margin-top: toRem(10);
+          font-size: toRem(22);
+        }
+      }
+  
+  
+      .btn-quote{
+        font-size: toRem(28);
+        height: toRem(64);
+        border-radius: toRem(10);
+        margin-top: toRem(20);
+        display: flex;
+        justify-content: center;
+        // padding-top: toRem(13);
+        align-items: center;
+      }
+    }
+  }
+  
+}

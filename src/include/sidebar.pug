@@ -1,0 +1,21 @@
+
+aside.sidebar-wrap
+  div.sidebar-container
+    div.sidebar-content
+      ul.sidebar-ul
+        //- li.login-side 
+        //-   ul(class="login-box")
+        //-     li: a(href=`${basePath}member/login.html`) 로그인
+        //-     li: a(href=`${basePath}member/join.html`) 회원가입
+        //-   ul(class=" logout-box")
+        //-     li
+        //-       p 홍길동님
+        //-       p 환영합니다.
+        //-     li: a(href=`#logout`) 로그아웃
+          
+        li: div
+          img(src=`${imgPath}/main/aside_btn_call.png`, alt="견적 문의하기")
+        li: button(class="fn-open-modal-quote")
+          img(src=`${imgPath}/main/aside_btn_quote.png`, alt="견적 문의하기")
+        li: a(href="#none")
+          img(src=`${imgPath}/main/aside_btn_katalk.png`, alt="카카오톡 문의")

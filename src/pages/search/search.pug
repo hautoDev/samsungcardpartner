@@ -1,0 +1,65 @@
+
+extends ../../template/layout_sub
+
+mixin listProduct()
+  li.li-product
+    div.img-area: img(src=`${imgPath}/car/car_relese01.png`, alt="자동차이미지")
+    div.car-info
+      p.car-name 스포티지
+      ul.car-price-ul
+        li.price-rent
+          p.p-type 렌트
+          p.p-price 123,000원
+        li.price-lease
+          p.p-type 리스
+          p.p-price 456,000원
+      //- p.car-tip (세금/보험료 포함)
+    div.btn-area
+      button(type="button" class="btn btn-quote fn-open-modal-quote") 견적신청
+      a(class="btn btn-detail" href="../product/product.html") 자세히 보기
+
+
+
+
+
+
+
+
+block content
+  main(class="wrap-container page-sub-search")
+    section(class="sect sect-search-cont")
+      div(class="sect-container")
+        div.search-result
+          P.result-title 상품 검색
+          div.result-info
+            p.info01
+              span.info-keyword 쏠렌토, 카니발
+              |  전체검색 결과
+            p.info02
+              | 총 
+              span.info-num 10
+              |개의 상품이 검색되었습니다.
+        ul.search-product-ul
+          -for(let i=0 ; i< 12; i++)
+            +listProduct()
+
+          
+
+
+
+
+      //페이징
+      div(class="paging-btn-area")
+        button(type="button" class="paging-btn paging-btn-first") 
+          img(src=`${imgPath}/common/paging_arrow_left_duble.png`, alt="처음 페이지")
+        button(type="button" class="paging-btn paging-btn-prev")
+          img(src=`${imgPath}/common/paging_arrow_left.png`, alt="이전 페이지")
+        
+        div(type="button" class="paging-btn-num-box")
+          -for(let i=0;i<5;i++)
+            button(type="button" class="paging-btn") #{i+1}
+        
+        button(type="button" class="paging-btn paging-btn-next")
+          img(src=`${imgPath}/common/paging_arrow_left.png`, alt="다음 페이지")
+        button(type="button" class="paging-btn paging-btn-last")
+          img(src=`${imgPath}/common/paging_arrow_left_duble.png`, alt="끝 페이지")

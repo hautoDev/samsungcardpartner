@@ -1,0 +1,11 @@
+{
+    "presets":["@babel/preset-env"]
+    //"presets":["es2014"]
+  //   "presets": [
+  //     ["@babel/preset-env", {
+  //       "targets": {
+  //         "browsers": ["IE >= 11"]
+  //       }   
+  //     }]
+  // ]
+}

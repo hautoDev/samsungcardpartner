@@ -1,0 +1,127 @@
+.login-sect-cont{
+  padding-bottom: 100px;
+  .login-area{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border: 2px solid #999;
+    border-left: none;
+    border-right: none;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 500px;
+    .in-box{
+      margin-bottom: 8px;
+    }
+    label{
+      display: inline-block;
+      width: 40%;
+      text-align: left;
+    }
+    input{
+      border: 1px solid #666;
+      padding: 3px;
+      padding-left: 10px;
+    }
+    .btn-login{
+      margin-top: 50px;
+      background-color: #820EA6;
+      color: #fff;
+      width: 34%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+}
+
+.join-sect-cont{
+  padding-bottom: 100px;
+  .join-title{
+    // text-align: left;
+    // margin: 0 auto;
+    // width: 100%;
+    // max-width: 800px;
+    font-size: 20px;
+  }
+  .join-area{
+    margin-top: 30px; 
+    
+  }
+
+  .join-area-table{
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    td{
+      border: 1px solid #ccc;
+      text-align: left;
+      padding: 16px;
+      &:first-of-type{
+        width: 18%;
+      }
+      span{
+        color: #666;
+        font-size: 14px;
+        margin-left: 10px;
+      }
+    }
+    input{
+      border: 1px solid #aaa;
+      padding: 3px;
+      padding-left: 10px;
+      width: 300px;
+    }
+  }
+
+  .agree-check-area{
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 1000px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    li{
+      padding: 40px;
+      &:nth-of-type(2){
+        border-top: 1px solid #ccc;
+      }
+    }
+  }
+
+  .agree-title{
+    text-align: left;
+  }
+
+  .agree-text-cont{
+    overflow-y: auto;
+    height: 200px;
+    width: 100%;
+    margin-top: 14px;
+    border: 1px solid #ccc;
+    pre{
+      background-color: #fff;
+      width: 100%;
+      text-align: left;
+      white-space: pre-wrap;
+      color: #333;
+      word-break: keep-all;
+      line-height: 1.4;
+      font-size: 14px;
+      padding: 6px;
+    }
+  }
+
+  .check-agree-box{
+    text-align: left;
+    margin-top: 10px;
+    label{
+      font-size: 15px;
+    }
+  }
+  .btn-join{
+    margin-top: 50px;
+    background-color: #820EA6;
+    color: #fff;
+    width: 10%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}

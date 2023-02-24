@@ -1,0 +1,23 @@
+mixin bottomInput(inType,tagName,labelText,plaName="")
+  label(for=tagName) #{labelText}
+  input(type=inType id=tagName class=tagName autocomplete='off' placeholder=plaName)
+    
+
+//- mixin bottomInputTel(plaName, className)
+//-   input(type="tel" class=className autocomplete='off' placeholder=plaName)
+
+//==하단_견적신청_추가==
+div(class="pc-bottom-wrap mobile-hidden")
+  div(class="pc-bottom-btn-area")
+    form(class="in-bottom-info-content")
+      div.in-info-area
+        +bottomInput("text","in-bottom-name","이름")
+        +bottomInput("tel","in-bottom-phone","연락처")
+        +bottomInput("text","in-bottom-cartype","관심차종","관심차종 모두 넣어주세요")
+        
+      div(class="agree-area")
+        input(type="checkbox", id="bottom-check-agree" class="check-agree")
+        label(for="bottom-check-agree" class="check-agree-label") 개인정보수집동의
+        button(type="button" class="btn-show fn-open-modal-agree") 보기
+      button(class="btn-car-quote fn-open-modal-complete" type="button") 견적신청
+//==하단_견적신청_추가 끝==

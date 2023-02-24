@@ -1,0 +1,73 @@
+//-기본 변수
+-let imgPath ="img";
+-let basePath ="";
+
+block baseVariable
+
+doctype html
+html(lang="ko")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
+    //설명문 추가
+    meta(name="description" content="장기렌트카는 삼성카드 제휴사몰에서 만나보세요~ 즉시출고 가격비교 등 다양한 혜택이 기다리고 있습니다.")
+
+    //파비콘 추가
+    link(rel="shortcut icon" href=`${imgPath}/common/favicon.ico`)
+
+    //서치어드바이저
+    //<meta name="naver-site-verification" content="956bacaeaa033cd267fc8713b3134fb7da1fbdd1" />
+
+    //font
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet")
+    link(href="https://webfontworld.github.io/SCoreDream/SCoreDream.css" rel="stylesheet")
+    //- link(href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet")
+
+    link(href= `${basePath}static/css/fonts/NanumSquare.css` rel="stylesheet")
+    link(href= `${basePath}static/css/fonts/GmarketSans.css` rel="stylesheet")
+    
+
+    
+
+    //base
+    link(rel="stylesheet" href=`${basePath}static/css/style.css`)
+    script(src=`${basePath}static/js/common.js`)
+    //- script(type="text/babel" src=`${basePath}static/js/common.js`)
+
+    //- font-awesome
+    //-link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css")
+
+    //- //==plugin==
+    //- //@swiperjs
+    link(rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css")
+    //- //- script(src="https://unpkg.com/swiper@7/swiper-bundle.min.js")
+    script(src=`${basePath}static/js/lib/swiper_bundle.min.7.4.1.js`)    
+
+
+    script(src=`${basePath}static/js/custom_naver_log.js`)
+
+    title 장기렌트카 삼성카드제휴사몰
+  
+  body(class="body")
+    div(class="wrap")
+      include ../include/topAd
+
+      include ../include/header
+
+      block content
+
+      include ../include/modal
+      include ../include/modal_car
+
+      include ../include/sidebar
+      include ../include/pc_bottom
+      include ../include/mobile_bottom
+
+      include ../include/footer

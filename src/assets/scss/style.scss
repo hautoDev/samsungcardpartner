@@ -1,0 +1,53 @@
+@import "base/_reset";
+@import "base/_variables";
+@import "base/_common";
+
+//
+*{
+  // font-family: 'Noto Sans KR', sans-serif;//기본굵기 400
+  font-family: 'NanumSquare', sans-serif; //기본굵기 400
+  // font-family: 'NanumSquareAc', sans-serif; //기본굵기 400
+  font-weight: 500;
+  //일반공식(pohto_va*base_font_size/1000)
+  letter-spacing: -0.075em;
+  line-height: 1;
+}
+// a{
+//   font-family: 'Noto Sans KR', sans-serif;
+// }
+
+body{
+  background-color: #ffffff;
+}
+
+@media (max-width:$mobileBaseMaxSize) {
+  //html{font-size: 62.5%;} //반응형 기준폰트
+  //body{font-size: calc(100vw/750);}
+  html{font-size: calc((100vw/750)*10);}
+  //body{font-size: 62.5%}
+  
+
+  img{image-rendering: -webkit-optimize-contrast;} //이미지 퀄리티업
+}
+
+
+@import "_header";
+@import "_footer";
+@import "_topAd";
+@import "_main";
+@import "_main_m";
+@import "_slide";
+@import "slide_cont/slide_intro_cont";
+@import "_sidebar";
+@import "_modal";
+@import "_modal_car";
+@import "_mobile_bottom";
+@import "_pc_bottom";
+
+@import "sub/_page_intro";
+// @import "sub/_page_review";
+@import "sub/_page_shop";
+@import "sub/_page_search";
+
+// @import "sub/_page_member";
+// @import "sub/_page_order";

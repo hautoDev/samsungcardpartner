@@ -1,0 +1,167 @@
+@media (min-width:($mobileBaseMaxSize+1)) {
+  .mobile-bottom-wrap{
+    display: none;
+  }  
+}
+
+// .mobile-bottom-wrap{  
+//   z-index: 20;
+//   position: fixed;
+//   bottom: 0;
+//   width: 100%;
+//   height: toRem(136);
+//   .mobile-bottom-btn-area{
+//     width: 100%;
+//     height: 100%;
+//     display: flex;
+//     //justify-content: space-between;
+//     .btn-box{
+//       width: 100%;
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+//       // width: toRem(318);
+//       p{
+//         padding-top: toRem(8);
+//         font-family: 'GmarketSans', sans-serif;//기본굵기 400
+//         font-weight: 500;
+//         font-size: toRem(45);
+//         line-height: 1.2;
+//       }
+//     }
+//     .icon-area{
+//       margin-right: toRem(16);
+//     }
+//     .btn-tel{
+//       width: 24%;
+//       background-color: #66bb24;
+//       color: #9f2492;
+//       position: relative;
+//       .icon-area{
+//         position: absolute;
+//         display: flex;
+//         justify-content: center;
+//         bottom: 0;
+//         left: 0;
+//         width: 100%;
+//         img{
+//           width: toRem(91);
+//           margin: 0 auto;
+//         }
+        
+//       }
+//       p{
+//         display: flex;
+//         justify-content: center;
+//         padding-top: toRem(58);
+//         width: 100%;
+//         height: 100%;
+//         z-index: 1;
+//         font-size: toRem(33);
+//         line-height: 1.02;
+//       }
+      
+//     }
+//     .btn-katalk{
+//       background-color: #ffd459;
+//       color: #000;
+//       .icon-area{
+//         img{
+//           width: toRem(94);
+//         }
+//       }
+//     }
+//     .btn-quote{
+//       background-color: $colorMainBlue;
+//       color: #fff;
+//       width: 76%;
+//       .icon-area{
+//         img{
+//           width: toRem(62);
+//         }
+//       }
+      
+//     }
+//   }
+// }
+  
+
+.mobile-bottom-wrap{  
+  z-index: 20;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: toRem(136);
+  .mobile-bottom-btn-area{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    //justify-content: space-between;
+    .btn-box{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: toRem(318);
+      p{
+        padding-top: toRem(8);
+        font-family: 'GmarketSans', sans-serif;//기본굵기 400
+        font-weight: 500;
+        font-size: toRem(37);
+        line-height: 1.2;
+      }
+    }
+    .icon-area{
+      margin-right: toRem(16);
+    }
+    .btn-tel{
+      width: toRem(114);
+      background-color: #66bb24;
+      color: #9f2492;
+      position: relative;
+      .icon-area{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        img{
+          width: toRem(91);
+          margin: 0 auto;
+        }
+        
+      }
+      p{
+        display: flex;
+        justify-content: center;
+        padding-top: toRem(58);
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        font-size: toRem(33);
+        line-height: 1.02;
+      }
+      
+    }
+    .btn-katalk{
+      background-color: #ffd459;
+      color: #000;
+      .icon-area{
+        img{
+          width: toRem(94);
+        }
+      }
+    }
+    .btn-quote{
+      background-color: #4c0685;
+      color: #fff;
+      .icon-area{
+        img{
+          width: toRem(62);
+        }
+      }
+      
+    }
+  }
+}

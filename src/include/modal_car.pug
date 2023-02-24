@@ -1,0 +1,56 @@
+mixin modalFrameCar(modalName)
+  div.modal-wrap(class=`modal-car modal-${modalName}`)
+    div.modal-container
+      div.modal-content(class=`modal-${modalName}-cont`)
+        block
+
+mixin popCarInfoBox(carName,imgName, price=0, link="#none")
+  li.ani-sty01: a(href=`${link}`) 
+    .img-area
+      img(src=`${imgPath}/car/${imgName}`, alt="이미지")
+      //- .img-box
+    .car-info-area 
+      p.car-name= carName
+      .car-price-box
+        p.price-cancel &nbsp;#{(price*(1-0.1)).toString().replace(/\B(?=(\d{3})+(?!\d))/,",")}&nbsp;&nbsp;
+        p.price-main
+          | 월 &nbsp;
+          span.num #{price.toString().replace(/\B(?=(\d{3})+(?!\d))/,",")}
+          span.won 원~
+      .car-etc-box
+        p 48개월 
+        p.bar |
+        p 선수금 30%
+    .btn-detail 자세히 보기
+    
+
+
++modalFrameCar("car-release")
+  button(type="button" class="btn-close fn-close-modal")
+  .title
+    p.title-main 로켓출고차량
+    p.title-sub 로켓 같이 빠르게!~ 놓칠 수 없는 기회~
+  ul.car-list-ul
+    +popCarInfoBox("아반떼","car_relese01.png", 125000)
+    +popCarInfoBox("아반떼","car_relese01.png", 120000)
+    +popCarInfoBox("아반떼","car_relese01.png", 310000)
+    +popCarInfoBox("아반떼","car_relese01.png", 42000)
+    +popCarInfoBox("아반떼","car_relese01.png", 52000)
+    +popCarInfoBox("아반떼","car_relese01.png", 46000)
+    //- +popCarInfoBox("아반떼","car_relese01.png")
+  div(class="bottom-arrow pc-hidden") 
+    img(src=`${imgPath}/common/icon_arrow_bottom.png`, alt="화살표 아래")
+
+
+
++modalFrameCar("car-electro")
+  button(type="button" class="btn-close fn-close-modal")
+  .title
+    p.title-main 전기차 출고목록
+    p.title-sub 미루지 말고 친환경 전기차로~
+  ul.car-list-ul
+    +popCarInfoBox("아반떼","car_relese01.png",10000, 10000)
+    +popCarInfoBox("아반떼","car_relese01.png",10000, 10000)
+    +popCarInfoBox("아반떼","car_relese01.png",10000, 10000)
+  div(class="bottom-arrow pc-hidden") 
+    img(src=`${imgPath}/common/icon_arrow_bottom.png`, alt="화살표 아래")

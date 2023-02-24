@@ -1,0 +1,243 @@
+extends ../template/layout
+
+//-함수들
+mixin titleMain(titleMain01, titleMain02, titleClassName="")
+  div(class=`title-area ${titleClassName}`)
+    p.title-main
+      span=titleMain01
+      span=titleMain02
+  
+mixin titleMainSub(titleMain, titleSub)
+  .title-area
+    p.title-main= titleMain
+    p.title-sub= titleSub
+
+mixin titleMainAndScrollID(titleMain01, titleMain02, scrollID)
+  .title-area(data-scroll-id=scrollID)
+    p.title-main
+      span=titleMain01
+      span=titleMain02
+    //- p.title-sub= titleSub
+
+mixin inputText(plaName, className)
+  input(type="text" class=className autocomplete='off' placeholder=plaName)
+    
+
+mixin inputTel(plaName, className)
+  input(type="tel" class=className autocomplete='off' placeholder=plaName)
+
+
+mixin ReleaseInfobox(num, carName, price01=0, price02=0)
+  if (num < 10)
+    -num= "0" + num
+  
+  a(class="swiper-slide info-box" href="#none")
+    p.car-top-icon: img(src=`${imgPath}/main/icon_release.png`, alt="아이콘")
+    p.car-name #{carName}
+    div.img-area: img(src=`${imgPath}/car/car_relese${num}.png`, alt="자동차이미지")
+    div.car-info  
+      div.car-price-box
+        p.p-deposit 보증금 30%
+        p.p-price 
+          |월 
+          span.span-point 32 
+          |만원대
+        p.p-tip (세금/보험료/방문정비 포함)
+
+
+    button(type="button" class="btn-quote") 견적신청하기
+
+
+mixin slideListRelease02()
+  +ReleaseInfobox("1","스포티지","425370","458480")
+  +ReleaseInfobox("2","K5","437800","465300")
+  +ReleaseInfobox("3","G80","838310","774400")
+  +ReleaseInfobox("4","캐스퍼","319110","338800")
+  +ReleaseInfobox("5","아반떼","338800","316500")
+  +ReleaseInfobox("6","투산","418900","449680")
+
+
+mixin SpecialInfobox(num, carName, price01=0, price02=0, price03=0)
+  if (num < 10)
+    -num= "0" + num
+  
+  a(class="swiper-slide info-box" href="#none")
+    
+    div.car-top-icon: img(src=`${imgPath}/main/icon_special.png`, alt="아이콘")
+    p.car-name #{carName}
+    div.img-area.bg-white-box: img(src=`${imgPath}/car/car_relese${num}.png`, alt="자동차이미지")
+    div.car-info
+      ul.car-price-ul
+        li.price-advance
+          p.p-type 선수금 30%
+          p.p-price #{price01.toString().replace(/\B(?=(\d{3})+(?!\d))/,",")}
+            span.won 원
+        li.price-deposit
+          p.p-type 보증금 30%
+          p.p-price #{price02.toString().replace(/\B(?=(\d{3})+(?!\d))/,",")}
+            span.won 원
+        li.price-normal
+          p.p-type 무보증
+          p.p-price #{price03.toString().replace(/\B(?=(\d{3})+(?!\d))/,",")}
+            span.won 원
+      p.car-tip (세금/보험료 포함)
+      button(type="button" class="btn-quote") 견적신청하기
+
+    
+mixin slideArea(classMainName, slideListFormatFun)
+  div(class=`slide-cont ${classMainName}`)
+    div(class="slide-area")
+      div(class="swiper")
+        div(class="swiper-wrapper car-info-area")
+          +#{slideListFormatFun}
+
+      div(class="slide-btn slide-btn-prev")
+        img(src="img/main/btn_arrow_left.png", alt="슬라이드 이전")
+      div(class="slide-btn slide-btn-next")
+        img(src="img/main/btn_arrow_left.png", alt="슬라이드 다음")
+        
+    div(class="slide-pagination")
+
+        
+
+mixin slideAreaIntro()
+  div(class="intro-main slide-intro")
+    
+mixin slideListSpecial()
+  +SpecialInfobox("1","카니발9인승 디젤","276380","457490","495110")
+  +SpecialInfobox("2","K8 2.5 가솔린","303250","482200","517800")
+  +SpecialInfobox("3","쏘렌토 1.6 가솔린","281375","497000","544000")
+  +SpecialInfobox("4","그랜저 2.5 가솔린","287560","481400","523500")
+  +SpecialInfobox("5","GV80 2.5 터보","502440","853930","926970")
+  +SpecialInfobox("6","아이오닉 전기차","302950","573650","663080")
+
+//-==HTML==
+block content
+  main(class="wrap-container page-main")
+    section(class="sect sect-intro")
+      div(class="sect-container")
+          include ./_main_intro_slide_cont
+
+    section(class="sect sect-in-info")      
+      div(class="sect-container")
+        +titleMain(`렌트카 견적은`,`삼성카드 장기렌트에서~!`, "title-in-info")
+        form.in-info-content
+          div.in-info-area
+            +inputText("이        름","in-name")
+            +inputTel("연  락  처","in-phone" )
+            +inputText("관심차종 1", "in-carype in-cartype01")
+            +inputText("관심차종 2", "in-cartype02")
+            +inputText("관심차종 3", "in-cartype03")
+          button(class="btn-quote fn-open-modal-complete" type="button")
+            p 견적
+            p 요청하기
+          div(class="agree-area")
+            input(type="checkbox", id="check-agree-modal" class="check-agree")
+            label(for="check-agree-modal" class="check-agree-label") 개인정보수집동의
+            button(type="button" class="btn-show fn-open-modal-agree") 보기
+      
+    section(class="sect sect-release")
+      div(class="sect-container")
+        +titleMainAndScrollID(`기다리지 않고`, ` 즉시 받을 수 있는 차!`, "release")  
+
+        //- 슬라이드부분(상위 클래스이름, 클래스 스타일 이름, 슬라이드상자형식(함수이름))
+        +slideArea("slide-cont-release" , "slideListRelease02")
+
+
+    section(class="sect sect-common-ad")
+        div(class="sect-container")
+          a(class="ad-link fn-open-modal-car-release" href="#none")
+            img(src=`${imgPath}/main/ad01.png`, alt="배너광고" class="mobile-hidden")
+            img(src=`${imgPath}/main/ad01_m.png`, alt="배너광고" class="pc-hidden")
+
+    section(class="sect sect-special" )
+      div(class="sect-container")
+        +titleMainAndScrollID(`원하는 차량`, ` 이벤트가로 구매해보세요!`, "special")  
+
+        //- 슬라이드부분(상위 클래스이름, 클래스 스타일 이름, 슬라이드상자형식(함수이름))
+        +slideArea("slide-cont-special" , "slideListSpecial")
+        
+
+    section(class="sect sect-common-ad")
+        div(class="sect-container")
+          a(class="ad-link fn-open-modal-car-electro")
+            img(src=`${imgPath}/main/ad02.png`, alt="배너광고" class="mobile-hidden")
+            img(src=`${imgPath}/main/ad02_m.png`, alt="배너광고" class="pc-hidden")
+          a(class="ad-link fn-open-modal-quote")
+            img(src=`${imgPath}/main/ad03.png`, alt="배너광고" class="mobile-hidden")
+            img(src=`${imgPath}/main/ad03_m.png`, alt="배너광고" class="pc-hidden")
+
+    section(class="sect sect-youtube")
+      div(class="sect-container")
+        div(class="title-area title-youtube")
+          p(class="title-main" data-scroll-id="youtube") YouTube 리뷰
+          p(class="title-sub") 유튜브 채널에서 영상을 통해 다양한 정보를 만나보세요.
+
+        div.youtube-intro 
+          div.youtube-area-main
+            div.youtube-box
+              <iframe class="youtube-frame" src="https://www.youtube.com/embed/Hhe64iaiRzM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          div.youtube-area-text  
+            p.txt-main 이달의 유튜브
+            div.txt-sub
+              p 삼성카드 스타리아 장기렌트 가격 
+              p 법인차량 리스 상품 알아보기
+            a(class="btn-go-youtube" href=`https://www.youtube.com/channel/UC_LntEPC8s3h_QVESEuc1jQ` target="_black") 
+              p.icon-triangle 에이치오토 유튜브 바로가기
+        
+        div(class="youtube-contents")
+          div(class="youtube-area")
+            div(class="youtube-box")
+              <iframe class="youtube-frame" src="https://www.youtube.com/embed/yVAqOpj5QOA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            p(class="youtube-text") 스타리아 장기렌트카
+            
+          div(class="youtube-area mobile-hidden")
+            div(class="youtube-box")
+              <iframe class="youtube-frame" src="https://www.youtube.com/embed/0SmzwdMzfIY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
+            p(class="youtube-text") EV6 장기렌트 실차주 솔직후기
+          
+
+    section(class="sect sect-partner")
+      div(class="sect-container")
+        +titleMain("공식파트너","","title-partner")
+        div(class="partner-list-cont")
+          div.partner-list01
+            img(src=`${imgPath}/main/partner_list01.png`, alt="파트너사")
+          div.partner-list02 
+            img(src=`${imgPath}/main/partner_list02.png`, alt="파트너사")
+        div.consult-area
+          div.consult-box.consult-katalk.mobile-hidden
+            div.icon 
+              img(src=`${imgPath}/common/icon_circle_katalk.png`, alt="아이콘")
+            p.ment 카카오톡 상담 진행 중
+          div.consult-box.consult-tel
+            div.tel-title
+              div.icon
+                img(src=`${imgPath}/common/icon_consult.png`, alt="아이콘")
+              p.title 장기렌트카 상담번호
+            p.tel-cont TEL: 1533-3753 
+              span (연중무휴상담신청)
+  
+
+
+  mixin modalListFrame(modalName, imgName)
+    li(class=`modal-list-target modal-list-${modalName}`)
+      button(type="button" class="btn-close fn-close-modal-list")
+      .img-area
+        img(src=`${imgPath}/modal/pop/${imgName}`)
+      
+      button(type="button" class="btn-car-quote fn-close-modal-list-all fn-open-modal-quote") 문의하기
+
+
+
+  //이달의 즉시출고차량 팝업(포터/봉고/g90)
+  div.modal-wrap-list
+    ul.modal-list-ul
+      +modalListFrame("porter-bongo",'pop_porter_bongo.png')
+      +modalListFrame("g90",'pop_g90.png')
+            
+
+
+  script(src="static/js/main.js")
+  
